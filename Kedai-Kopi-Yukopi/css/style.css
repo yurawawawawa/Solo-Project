@@ -165,11 +165,30 @@ body {
 
 .about .row {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
   padding: 1.4rem 7%;
 }
 
-.about .content {
-  padding: 1rem 3rem;
+.about .row .about-img {
+  flex: 0 0 auto;
+  width: 280px;
+  perspective: 800px;
+}
+
+.about .row .about-img img {
+  width: 100%;
+  border-radius: 1rem;
+  transition: transform 0.1s ease-out;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(53, 92, 125, 0.25);
+  will-change: transform;
+}
+
+.about .row .content {
+  flex: 1 1 28rem;
+  padding: 0;
 }
 
 /* LAPTOP */
