@@ -20,11 +20,15 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- NAVBAR -->
+    <!-- ============================================== -->
+    <!-- NAVBAR SECTION -->
+    <!-- ============================================== -->
     <nav class="navbar">
       <a href="#" class="navbar-title"><span>Pomodoro </span> Study Method </a>
+      <button class="btn music nav-music" id="musicBtn" aria-label="Toggle Music" title="Background Music">
+        <i data-feather="music"></i>
+      </button>
     </nav>
-
     <!-- NAVBAR END -->
 
     <!-- MAIN -->
@@ -32,17 +36,30 @@
       <div class="box">
         <h2>FOCUS TIMER</h2>
 
+
         <!-- TIMER -->
+        <h2 class="timer-mode-title" id="modeTitle">WORK TIME</h2>
+        <div class="timer-modes">
+          <span class="mode-indicator active" id="workIndicator">Work (50:00)</span>
+          <span class="mode-indicator" id="restIndicator">Rest (10:00)</span>
+        </div>
         <p class="timer" id="timer">50:00</p>
 
-        <!-- BUTTONS -->
+        <!-- ============================================== -->
+        <!-- TIMER BUTTONS -->
+        <!-- START, RESET, and REST controls -->
+        <!-- ============================================== -->
         <div class="buttons">
           <button class="btn start" id="startBtn">START</button>
+          <button class="btn rest" id="restBtn">REST</button>
           <button class="btn reset" id="resetBtn">RESET</button>
         </div>
       </div>
 
-      <!-- STICKY NOTE TODO LIST -->
+      <!-- ============================================== -->
+      <!-- STICKY NOTE TODO LIST SECTION -->
+      <!-- Used for tracking tasks during the pomodoro session -->
+      <!-- ============================================== -->
       <div class="sticky-note">
         <h2 class="todo-title">Study List</h2>
         <div class="input-group">
@@ -56,7 +73,10 @@
     </div>
     <!-- MAIN END -->
 
-    <!-- Manfaat Pomodoro Section -->
+    <!-- ============================================== -->
+    <!-- BENEFITS / MANFAAT POMODORO SECTION -->
+    <!-- Information about why the Pomodoro method is useful -->
+    <!-- ============================================== -->
     <section class="benefits-section">
       <div class="benefits-container">
         <h2 class="benefits-title">Manfaat Pomodoro Technique</h2>
@@ -77,10 +97,13 @@
       </div>
     </section>
     <!-- Manfaat Pomodoro End -->
-    <!-- SCRIPT -->
+    <!-- ============================================== -->
+    <!-- SCRIPTS & AUDIO RESOURCES -->
+    <!-- ============================================== -->
     <script src="js/script.js" defer></script>
 
     <!-- AUDIO ALERT -->
     <audio id="alarmSound" src="Alarm.mp3"></audio>
+    <audio id="bgMusic" src="lagu.mp3" loop></audio>
   </body>
 </html>
