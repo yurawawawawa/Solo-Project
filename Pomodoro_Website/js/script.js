@@ -56,7 +56,60 @@ document.addEventListener("DOMContentLoaded", () => {
     time = 5 * 600;
     isRunning = false;
     startBtn.textContent = "START";
-    timerDisplay.textContent = "50.00";
+    timerDisplay.textContent = "50:00";
+  });
+
+  // Sticky Note
+  const taskInput = document.getElementById("taskInput");
+  const addBtn = document.getElementById("addBtn");
+  const taskList = document.getElementById("taskList");
+
+  function addTask() {
+    const taskText = taskInput.value.trim();
+    if (taskText !== "") {
+      const li = document.createElement("li");
+      li.className = "task-item";
+
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.className = "checkbox";
+      checkbox.addEventListener("change", function () {
+        if (this.checked) {
+          li.classList.add("completed");
+        } else {
+          li.classList.remove("completed");
+        }
+      });
+
+      const span = document.createElement("span");
+      span.className = "task-text";
+      span.textContent = taskText;
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.className = "delete-btn";
+      deleteBtn.innerHTML = "&times;";
+      deleteBtn.addEventListener("click", () => {
+        li.remove();
+      });
+
+      li.appendChild(checkbox);
+      li.appendChild(span);
+      li.appendChild(deleteBtn);
+
+      taskList.appendChild(li);
+      taskInput.value = "";
+    }
+  }
+
+  // Stikcy Note End
+
+  // Alarm Start
+  addBtn.addEventListener("click", addTask);
+
+  taskInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      addTask();
+    }
   });
 });
 
